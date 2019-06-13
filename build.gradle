@@ -1,0 +1,45 @@
+plugins {
+    id 'groovy'
+}
+
+apply plugin: 'groovy'//使用 groovy 插件构建项目
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()//gradle sdk
+    compile localGroovy()//groovy sdk
+}
+
+
+
+//上传使用参数
+def groupName = 'com.zhulk.plugin.hello'//组名
+def artifactName = 'custom-plugin'//项目名
+def versionName = '1.0.1'//版本号
+
+//使用 maven-publish 插件先发布到本地
+apply plugin: 'maven-publish'
+publishing{
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId "${groupName}"
+            artifactId "${artifactName}"
+            version "${versionName}"
+        }
+    }
+
+    repositories{
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url "../repo"
+        }
+    }
+}
+
