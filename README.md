@@ -1,8 +1,6 @@
 # commonplugin
-自定义 Gradle 插件，详情移步：https://juejin.im/post/5cff56d3f265da1ba431e46c
-   
-   
-   
+自定义 Gradle 插件，详情移步
+  
    >Gradle系列分2章<br>
 [上篇Android Gradle Groovy自动化构建入门篇](https://juejin.im/post/5a5b366af265da3e58594f00)<br>
 [下篇Android Gradle Groovy自动化构建进阶篇](https://juejin.im/post/5cff56d3f265da1ba431e46c)
